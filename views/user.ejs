@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>User List</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <link  href="/assets/styles.css" rel="stylesheet" type="text/css" />
+    <script src="/assets/user-list.js"></script>
+  </head>
+  <body>
+    <h1>My Users List</h1>
+    <div id="user-table">
+      <form>
+            <div><input type="text" name="name" placeholder="Add name..." required /></div>
+            <div><input type="text" name="age" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
+                placeholder="Add Age..." required /></div>
+            <div><input type="email" name="email" placeholder="Add E-mail..." required /></div>
+            <div><button type="submit" >Add</button></div>
+      </form>
+    </div>
+
+        <ul>
+          <% for(var i=0; i < users.length; i++) { %>
+            <li>Name: <%= users[i].name %>,
+                Age: <%= users[i].age %>,
+                E-mail: <%= users[i].email %>
+                <input type="hidden" id="id" value="<%= users[i]._id %>" />
+            </li>
+          <% } %>
+        </ul>
+
+  </body>
+</html>
