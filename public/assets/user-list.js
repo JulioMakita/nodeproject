@@ -21,6 +21,10 @@ $(document).ready(function(){
   });
 
   $('li').on('click', function(){
+
+    var confirm = confirm("Would you like remove?");
+
+    if (confirm == true) {
       var id = $("#id").val();
       $.ajax({
         type: 'DELETE',
@@ -30,6 +34,6 @@ $(document).ready(function(){
           location.reload();
         }
       });
+    }
   });
-
 });
