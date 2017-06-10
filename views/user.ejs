@@ -13,21 +13,18 @@
       <form>
             <div><input type="text" name="name" placeholder="Add name..." required /></div>
             <div><input type="text" name="age" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"
-                placeholder="Add Age..." required /></div>
-            <div><input type="email" name="email" placeholder="Add E-mail..." required /></div>
+              placeholder="Add Age..." required /></div>
+            <div><input type="text" name="email" placeholder="Add E-mail..." required /></div>
             <div><button type="submit" >Add</button></div>
       </form>
     </div>
-
         <ul>
           <% for(var i=0; i < users.length; i++) { %>
-            <li>Name: <%= users[i].name %>,
+            <li rel="<%= users[i]._id %>">Name: <%= users[i].name %>,
                 Age: <%= users[i].age %>,
                 E-mail: <%= users[i].email %>
-                <input type="hidden" id="id" value="<%= users[i]._id %>" />
             </li>
           <% } %>
         </ul>
-
   </body>
 </html>

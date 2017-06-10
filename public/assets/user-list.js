@@ -17,23 +17,25 @@ $(document).ready(function(){
       });
 
       return false;
-
   });
 
   $('li').on('click', function(){
 
-    var confirm = confirm("Would you like remove?");
+      var id = $(this).attr("rel");
 
-    if (confirm == true) {
-      var id = $("#id").val();
-      $.ajax({
-        type: 'DELETE',
-        url: '/user/' + id,
-        success: function(data){
-          //do something with the data via front-end framework
-          location.reload();
-        }
-      });
-    }
+      var r = confirm("Would you like to remove?");
+
+      if(r == true){
+
+        $.ajax({
+          type: 'DELETE',
+          url: '/user/' + id,
+          success: function(data){
+            //do something with the data via front-end framework
+            location.reload();
+          }
+        });
+      }
   });
+
 });

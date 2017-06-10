@@ -52,6 +52,22 @@ button{
     font-size: 20px;
 }
 
+.botao {
+    background-color: #555555;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.botao:hover{
+    text-decoration: underline;
+    background: #e7e7e7;
+}
+
 ul{
     list-style-type: square;
     padding: 0;

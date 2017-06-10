@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost:27017/user');
 //Create a Schema
 var userSchema = new mongoose.Schema({
   name : String,
-  age: Number,
+  age : Number,
   email: String
 });
 
@@ -28,6 +28,7 @@ module.exports = function(app){
   app.post('/user', urlencodedParser, function(req, res){
     //get data from the view and add  it to mongodb
     var newUser = User(req.body).save(function(err, data){
+      console.log(req.body);
       if(err) throw err;
       res.json(data);
     });
